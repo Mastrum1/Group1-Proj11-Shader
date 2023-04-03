@@ -33,7 +33,7 @@ public class MoveGameObject : MonoBehaviour
     {
         if (_input != Vector3.zero)
         {
-            var matrix = Matrix4x4.Rotate(Quaternion.Euler(0,45,0));
+            var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
             var skewedInput = matrix.MultiplyPoint3x4(_input);
 
             var relative = (transform.position + skewedInput) - transform.position;
