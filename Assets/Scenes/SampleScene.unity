@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7777fb3233007884c89cfc1021de332a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MeshMaterial: {fileID: 0}
+  _MeshMaterial: {fileID: 2100000, guid: 6bbba86f8ae2a734ab6bab8be37f0857, type: 2}
 --- !u!4 &1348644262
 Transform:
   m_ObjectHideFlags: 0
