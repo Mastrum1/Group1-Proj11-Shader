@@ -13,8 +13,11 @@ public class MoveGameObject : MonoBehaviour
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _turnSpeed = 360;
 
+    [SerializeField] private Animator _animator;
+
     private void Update()
     {
+        _animator = GetComponent<Animator>();
         InputManager();
         Look();
     }
@@ -33,6 +36,7 @@ public class MoveGameObject : MonoBehaviour
     {
         if (_input != Vector3.zero)
         {
+            _animator.SetBool("IsMoving", true);
             var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
             var skewedInput = matrix.MultiplyPoint3x4(_input);
 
@@ -40,6 +44,10 @@ public class MoveGameObject : MonoBehaviour
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.deltaTime);
+        }
+        else
+        {
+            _animator.SetBool("IsMoving", false);
         }
     }
     void Move()
