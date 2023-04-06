@@ -475,6 +475,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1793917741}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &693729683
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693729677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.0436866
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9918004, z: 0}
 --- !u!1 &1706450671
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +636,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5756fc3eb59372d4b9b0f6ab1f7b1be3,
         type: 3}
       propertyPath: m_Name
-      value: Idle
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5756fc3eb59372d4b9b0f6ab1f7b1be3,
         type: 3}
@@ -645,6 +668,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 693729678}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5756fc3eb59372d4b9b0f6ab1f7b1be3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 693729683}
   m_SourcePrefab: {fileID: 100100000, guid: 5756fc3eb59372d4b9b0f6ab1f7b1be3, type: 3}
 --- !u!1 &1894281889
 GameObject:
@@ -862,7 +889,6 @@ GameObject:
   - component: {fileID: 2028273226}
   - component: {fileID: 2028273225}
   - component: {fileID: 2028273228}
-  - component: {fileID: 2028273229}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -961,20 +987,4 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
---- !u!114 &2028273229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028273224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 1, y: 1, z: 1}
-  m_Area: 1
   m_AffectedAgents: ffffffff
