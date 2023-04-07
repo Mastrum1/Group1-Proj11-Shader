@@ -31,9 +31,13 @@ public class EnemyAI : MonoBehaviour
 
     NavMeshAgent _agent;
 
-    void Start()
+    private void Awake()
     {
         _Player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void Start()
+    {
         _agent = GetComponent<NavMeshAgent>();
     }
 
