@@ -22,8 +22,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position;
         randomspawn = Random.Range(0,spawnpoint.Length);
         Instantiate(enemies, spawnpoint[randomspawn].transform);
     }

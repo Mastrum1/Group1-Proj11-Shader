@@ -44,5 +44,6 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         _agent.SetDestination(_Player.position);
+        transform.position = new Vector3(transform.position.x, 0 , transform.position.z);
     }
 }
