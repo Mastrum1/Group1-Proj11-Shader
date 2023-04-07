@@ -5,9 +5,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] public GameObject enemies;
+    [SerializeField] public GameObject[] spawnpoint;
+    [SerializeField] public GameObject player;
+    [SerializeField] public int randomspawn;
     // Start is called before the first frame update
     void Start()
     {
+        spawnpoint = GameObject.FindGameObjectsWithTag("Spawn");
         InvokeRepeating("Spawn", 1, 5);
     }
 
@@ -18,6 +22,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(enemies);
+        player = GameObject.FindGameObjectWithTag("Player");
+        transform.position = player.transform.position;
+        randomspawn = Random.Range(0,spawnpoint.Length);
+        Instantiate(enemies, spawnpoint[randomspawn].transform);
     }
 }

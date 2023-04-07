@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject[] enemies;
-    Transform tMin;
+    Transform tMin = null;
 
     public float bulletForce = 20f;
 
@@ -37,9 +37,9 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 test = tMin.position - transform.position;
+        Vector3 distance = tMin.position - transform.position;
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(test, ForceMode.Impulse);
+        rb.AddForce(distance, ForceMode.Impulse);
     }
 }
