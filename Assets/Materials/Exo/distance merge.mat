@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: e0d84b7f5f97ae5449a45537b386489c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlbedoA:
         m_Texture: {fileID: 2800000, guid: ec0b7737a6f36f048847c50dcaba9ed2, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -33,6 +37,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Amplitude: 1
     - _LerpAlpha: 0.5
-    m_Colors: []
+    m_Colors:
+    - _ColorA: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorB: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

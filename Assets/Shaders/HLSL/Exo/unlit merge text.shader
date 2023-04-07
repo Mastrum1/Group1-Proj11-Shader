@@ -5,7 +5,6 @@ Shader "Learning/Unlit/FirstShader"
         // NOM_VARIABLE("NOM_AFFICHE_DANS_L'INSPECTOR", Shaderlab type) = defaultValue
         _AlbedoA("Albedo", 2D) = "white" {}
         _AlbedoB("Albedo", 2D) = "black" {}
-        _AlbedoC("Albedo", 2D) = "black" {}
         _LerpAlpha("Lerp", Range(0,1)) = 0.5  // slider
     }
 
@@ -21,7 +20,6 @@ Shader "Learning/Unlit/FirstShader"
 
             sampler2D _AlbedoA;
             sampler2D _AlbedoB;
-            sampler2D _AlbedoC;
             float _LerpAlpha;
 			
 			struct vertexInput
@@ -52,7 +50,7 @@ Shader "Learning/Unlit/FirstShader"
             // Pour chaque pixel couvert par vos triangles / polynomes
             float4 frag(v2f i) : SV_Target
             {
-                return lerp(tex2D(_AlbedoA, i.uv), tex2D(_AlbedoB, i.uv), tex2D(_AlbedoC, i.uv).r); //RGBA
+                return lerp(tex2D(_AlbedoA, i.uv), tex2D(_AlbedoB, i.uv), _LerpAlpha); //RGBA
             }
             
             ENDHLSL
