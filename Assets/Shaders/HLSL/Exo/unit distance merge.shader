@@ -3,9 +3,10 @@ Shader "Learning/Unlit/FirstShader"
     Properties
     {
         // NOM_VARIABLE("NOM_AFFICHE_DANS_L'INSPECTOR", Shaderlab type) = defaultValue
-        _AlbedoA("Albedo", 2D) = "white" {}
-        _AlbedoB("Albedo", 2D) = "black" {}
-        _LerpAlpha("Lerp", Range(0,1)) = 0.5  // slider
+        _ColorA("_ColorA", Color) = (1,1,1,1)
+        _ColorB("_ColorB", Color) = (0,0,0,0)
+        _Albedo("Albedo",  2D) = "white"{}
+        _Amplitude("Amplitude", Float) = 1
     }
 
         SubShader
@@ -18,10 +19,10 @@ Shader "Learning/Unlit/FirstShader"
 
             #include "UnityCG.cginc"
 
-            sampler2D _AlbedoA;
-            sampler2D _AlbedoB;
-            sampler2D _AlbedoC;
-            float _LerpAlpha;
+            float4 _ColorA;
+            float4 _ColorB;
+            sampler2D _Albedo;
+            float _Amplitude;
 			
 			struct vertexInput
             {
@@ -43,8 +44,14 @@ Shader "Learning/Unlit/FirstShader"
             v2f vert (vertexInput v)
             {
                 v2f o;
+
+                v.vertex.y += sin(_Time.y) * _Amplitude;
+
 	            o.vertex = UnityObjectToClipPos(v.vertex); // ligne obligatoire
+
+
                 o.uv = v.uv;
+                tex2Dlod(_Albedo, float4(o.uv.xy,0,0));
                 o.worldSpacePos = mul(unity_ObjectToWorld, v.vertex);
                 return o;
             }
@@ -53,10 +60,9 @@ Shader "Learning/Unlit/FirstShader"
             // Pour chaque pixel couvert par vos triangles / polynomes
             float4 frag(v2f i) : SV_Target
             {
-                float d = distance(_WorldSpaceCameraPos, i.worldSpacePos);
-                float t = clamp(d, 0, 1);
+                float t = clamp(i.worldSpacePos.y, 0, 1);
 
-                return lerp(tex2D(_AlbedoA, i.uv), tex2D(_AlbedoB, i.uv), t); //RGBA
+                return tex2D(_Albedo, i.uv); //RGBA
             }
             
             ENDHLSL
