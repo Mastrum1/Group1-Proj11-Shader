@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 3
+  healthPack: {fileID: 1465207541995380, guid: a5ad3b53c234b9040b754b2c2c9d8fc6, type: 3}
 --- !u!136 &639719011681883503
 CapsuleCollider:
   m_ObjectHideFlags: 0

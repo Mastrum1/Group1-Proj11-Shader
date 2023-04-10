@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] private int _HP = 10;
+    [SerializeField] public int _HP = 10;
     public GameObject bulletPrefab;
 
     // Start is called before the first frame update

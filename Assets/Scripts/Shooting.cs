@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -10,7 +11,8 @@ public class Shooting : MonoBehaviour
     public GameObject[] enemies;
     Transform tMin = null;
 
-    public float bulletForce = 20f;
+    public float bulletForce = 2f;
+    public int shooted = 0;
 
     // Update is called once per frame
     void Update()
@@ -37,9 +39,16 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 distance = tMin.position - transform.position;
-        GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(distance, ForceMode.Impulse);
+        if (tMin != null)
+        {
+            if (Vector3.Distance(tMin.position, transform.position) < 12)
+            {
+                Vector3 distance = tMin.position - transform.position;
+                GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                rb.AddForce(distance * bulletForce, ForceMode.Impulse);
+                shooted++;
+            }
+        }
     }
 }

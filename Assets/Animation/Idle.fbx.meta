@@ -620,28 +620,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Swat@Gunplay (1)(Clone)
+    - name: Idle(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Geo
-      parentName: Swat@Gunplay (1)(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Soldier_head
-      parentName: Geo
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Soldier_body
-      parentName: Geo
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Swat@Gunplay (1)(Clone)
+      parentName: Idle(Clone)
       position: {x: 0.0023711026, y: 0.99161094, z: -0.0058877515}
       rotation: {x: 6.133908e-11, y: 0.000001396984, z: -0.00004390386, w: 1}
       scale: {x: 1, y: 1, z: 1.0000001}
@@ -964,7 +949,7 @@ ModelImporter:
     - name: mixamorig:LeftToeBase
       parentName: mixamorig:LeftFoot
       position: {x: 1.110223e-18, y: 0.1473504, z: -1.3322676e-17}
-      rotation: {x: 0.46005186, y: -0.0016336397, z: 0.0070043346, w: 0.88786286}
+      rotation: {x: 0.4600519, y: -0.0016336398, z: 0.007004335, w: 0.8878629}
       scale: {x: 1.000001, y: 1.000001, z: 1.0000005}
     - name: mixamorig:LeftToe_End
       parentName: mixamorig:LeftToeBase
@@ -994,6 +979,21 @@ ModelImporter:
     - name: mixamorig:RightToe_End
       parentName: mixamorig:RightToeBase
       position: {x: -3.1880505e-11, y: 0.06677563, z: 5.6875376e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Geo
+      parentName: Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Soldier_head
+      parentName: Geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Soldier_body
+      parentName: Geo
+      position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5

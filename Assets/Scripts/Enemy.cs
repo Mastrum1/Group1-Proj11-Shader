@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int enemyHP = 3;
+    public GameObject healthPack;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,10 @@ public class Enemy : MonoBehaviour
     {
         if (enemyHP <= 0)
         {
+            if (Random.Range(1,10) == 1)
+            {
+                Instantiate(healthPack, transform.position + Vector3.up, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
