@@ -571,6 +571,7 @@ MonoBehaviour:
   _rb: {fileID: 693729680}
   _speed: 3
   _turnSpeed: 360
+  cam: {fileID: 0}
   _animator: {fileID: 0}
 --- !u!54 &693729680
 Rigidbody:
@@ -637,7 +638,6 @@ MonoBehaviour:
   firePoint: {fileID: 543450651914429638}
   bulletPrefab: {fileID: 6660009714475885507, guid: 87cbb544dc5966e499decd4eb7d4d584,
     type: 3}
-  enemies: []
   bulletForce: 20
   shooted: 0
 --- !u!1 &807256272
@@ -1783,5 +1783,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 78
+  m_Constraints: 126
   m_CollisionDetection: 0
