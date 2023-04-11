@@ -18,22 +18,27 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyHP == 3)
+        if (enemyHP != 0)
         {
-            dissolve = Mathf.Lerp(dissolve, 1f, 2f * Time.deltaTime);
-
+            if(dissolve < 0.99f) {
+                dissolve = Mathf.Lerp(dissolve, 1f, 2f * Time.deltaTime);
+            }
+            else
+            {
+                dissolve = 1;
+            }
             shaders.material.SetFloat("_Boolean", 1);
             shaders.material.SetFloat("_disolve", Mathf.Lerp(dissolve, 0, 2f * Time.deltaTime));
-            
+
         }
         if (enemyHP == 0)
         {
-
-            dissolve = Mathf.Lerp(dissolve, 0f, 2f * Time.deltaTime);
-
-            shaders.material.SetFloat("_Boolean", 0);
-            shaders.material.SetFloat("_disolve", Mathf.Lerp(dissolve, 0, 2f * Time.deltaTime));
-            
+            if (dissolve > 0.01f)
+            {
+                dissolve = Mathf.Lerp(dissolve, 0f, 2f * Time.deltaTime);
+                shaders.material.SetFloat("_Boolean", 0);
+                shaders.material.SetFloat("_disolve", Mathf.Lerp(dissolve, 0, 2f * Time.deltaTime));
+            }
         }
     }
 
