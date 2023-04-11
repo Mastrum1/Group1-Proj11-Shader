@@ -8,8 +8,6 @@ public class Shooting : MonoBehaviour
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public GameObject[] enemies;
-    Transform tMin = null;
 
     public float bulletForce = 2f;
     public int shooted = 0;
@@ -17,38 +15,21 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemies");
-        tMin = null;
-        float minDist = Mathf.Infinity;
-        Vector3 currentPos = transform.position;
-        for (int i = 0; i < enemies.Length; i++)
+        if (Input.GetButtonDown("Fire1"))
         {
-            float dist = Vector3.Distance(enemies[i].transform.position, currentPos);
-            if (dist < minDist)
-            {
-                tMin = enemies[i].transform;
-                minDist = dist;
-            }
+            Shoot();
         }
     }
 
     private void Start()
     {
-        InvokeRepeating("Shoot", 1, 1);
     }
 
     void Shoot()
     {
-        if (tMin != null)
-        {
-            if (Vector3.Distance(tMin.position, transform.position) < 12)
-            {
-                Vector3 distance = tMin.position - transform.position;
-                GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
-                Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                rb.AddForce(distance * bulletForce, ForceMode.Impulse);
-                shooted++;
-            }
-        }
+        GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+        shooted++;
     }
 }

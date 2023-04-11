@@ -12,7 +12,7 @@ public class MoveGameObject : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _turnSpeed = 360;
-
+    public Camera cam;
     [SerializeField] private Animator _animator;
 
     private void Update()
@@ -53,5 +53,11 @@ public class MoveGameObject : MonoBehaviour
     void Move()
     {
         _rb.MovePosition(transform.position + (transform.forward * _input.magnitude) * _speed * Time.deltaTime);
+
+        /*float distanceToPlayer = Vector3.Distance(cam.transform.position, transform.position);
+        Vector3 cameraPoint = Input.mousePosition;
+        cameraPoint.z = distanceToPlayer;
+        Vector3 worldPoint = cam.ScreenToWorldPoint(cameraPoint);
+        Debug.Log(worldPoint);*/
     }
 }
