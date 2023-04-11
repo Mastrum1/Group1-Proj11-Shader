@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ScanEffect
-  m_Shader: {fileID: -6465566751694194690, guid: 5a603f5988ac57346979c1e36203b002,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: de0918c5942ec2b48bcff8699629d81c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,7 +37,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Bands: 2.6
     - _Edge: 0.46
+    - _Exp: 3.7
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
