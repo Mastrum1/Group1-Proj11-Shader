@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         }
         if (enemyHP == 0)
         {
+            tag = "dead";
             if (dissolve > 0.01f)
             {
                 dissolve = Mathf.Lerp(dissolve, 0f, 2f * Time.deltaTime);
@@ -40,13 +41,16 @@ public class Enemy : MonoBehaviour
                 shaders.material.SetFloat("_disolve", Mathf.Lerp(dissolve, 0, 2f * Time.deltaTime));
             }
         }
+        if (enemyHP == 0 && dissolve <= 0.01f) {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet") 
         {
-            enemyHP--;
+            enemyHP= Math.Max(enemyHP-1 , 0);
         }
     }
 }
