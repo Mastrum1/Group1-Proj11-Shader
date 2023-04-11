@@ -156,3 +156,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 3
+  shaders:
+  - {fileID: -6465566751694194690, guid: edb07edfd1f8d3540b8b18bfeffb6fdf, type: 3}
