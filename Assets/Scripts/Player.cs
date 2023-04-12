@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         {
             _HP--;
             Heal.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Healing", 1);
-            Heal.GetComponent<SkinnedMeshRenderer>().material.SetColor("_DefaultColor", Color.red);
+            Heal.GetComponent<SkinnedMeshRenderer>().material.SetColor("_DefaultColor", Color.red * 120);
             _currentHP = _HP;
         }
     }
