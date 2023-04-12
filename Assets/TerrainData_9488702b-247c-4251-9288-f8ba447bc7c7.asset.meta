@@ -1,15 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<<< HEAD:Assets/TerrainData_9488702b-247c-4251-9288-f8ba447bc7c7.asset.meta
+=======
+>>>>>>> Stashed changes
 guid: 6d54c093e6f3352408d0095facd39654
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 15600000
+<<<<<<< Updated upstream
 ========
 guid: 2ef6df9336ae49f42938b42108a2411a
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
 >>>>>>>> parent of f5430ff (Night + Flare go in sky):Assets/Sprites.meta
+=======
+>>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
