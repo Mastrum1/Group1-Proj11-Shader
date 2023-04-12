@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         if (enemyHP <= 0)
         {
-            if (Random.Range(1,10) == 1)
+            if (Random.Range(1,2) == 1)
             {
                 Instantiate(healthPack, transform.position + Vector3.up, transform.rotation);
             }
