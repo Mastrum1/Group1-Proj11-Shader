@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
             }
             if (disolve <= 0.01f)
             {
-                if (Random.Range(1, 2) == 1)
+                if (UnityEngine.Random.Range(1, 2) == 1)
                 {
                     Instantiate(healthPack, transform.position + Vector3.up, transform.rotation);
                 }
