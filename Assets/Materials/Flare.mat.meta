@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Shader Graphs_LevelUpEffect.mat.meta
+guid: fe274174c41ba6e48a8576e00398fdd8
+========
 guid: f8f134982b034f546af77d511ea23add
+>>>>>>>> 935e6fe8951bbf7d9b02f99596239d3acd7605f7:Assets/Materials/Flare.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
