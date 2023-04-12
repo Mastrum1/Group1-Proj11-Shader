@@ -59,8 +59,10 @@ public class SimpleCollectibleScript : MonoBehaviour {
 			{
 				GameObject.Find("Player").GetComponent<Player>()._HP++;
 				Heal.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Healing", 1);
+                Heal.GetComponent<SkinnedMeshRenderer>().material.SetColor("_DefaultColor", Color.green);
+
             }
-		}
+        }
 		if (CollectibleType == CollectibleTypes.Type2) {
 
 			//Add in code here;
