@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,14 +20,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         if (enemyHP != 0)
         {
-            
+
             if (disolve < 0.99f)
             {
                 disolve = Mathf.Lerp(disolve, 1f, 2f * Time.deltaTime);
-                
+
             }
             else
             {
@@ -36,11 +37,11 @@ public class Enemy : MonoBehaviour
             {
                 foreach (Material m in r.materials)
                 {
-                    
+
                     m.SetFloat("_Boolean", 1);
                     m.SetFloat("_disolvePerso", Mathf.Lerp(disolve, 0, 2f * Time.deltaTime));
                 }
-                
+
             }
 
         }
@@ -71,9 +72,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet") 
+        if (other.tag == "Bullet")
         {
-            enemyHP--;
+            enemyHP= Math.Max(enemyHP-1 , 0);
             body.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Damage", 1);
         }
     }
