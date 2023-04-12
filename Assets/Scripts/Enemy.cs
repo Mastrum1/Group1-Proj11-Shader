@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                disolve = 1;
+                disolve = 1f;
             }
             foreach (Renderer r in shaders)
             {
@@ -48,8 +48,9 @@ public class Enemy : MonoBehaviour
 
         if (enemyHP <= 0)
         {
+            GetComponent<EnemyAI>().setDeath();
             disolve = Mathf.Lerp(disolve, 0f, 2f * Time.deltaTime);
-            if (disolve > 0.01f)
+            if (disolve > 0.1f)
             {
                 foreach (Renderer r in shaders) {
                     foreach (Material m in r.materials)
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
-            if (disolve <= 0.01f)
+            if (disolve <= 0.1f)
             {
                 if (UnityEngine.Random.Range(1, 2) == 1)
                 {
