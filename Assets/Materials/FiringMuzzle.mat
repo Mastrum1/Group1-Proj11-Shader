@@ -51,9 +51,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 1
+    - _FresnelPower: 43.62
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _MuzzleColor: {r: 0.054834906, g: 0.024871023, b: 0.0033625173, a: 0}
+    - _MuzzleColor: {r: 1, g: 0.062615655, b: 0.023584902, a: 0}
   m_BuildTextureStacks: []
