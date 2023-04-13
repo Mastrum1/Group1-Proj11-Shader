@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
                 foreach (Renderer r in shaders) {
                     foreach (Material m in r.materials)
                     {
+                        GetComponent<CapsuleCollider>().enabled = false;
                         m.SetFloat("_Boolean", 0);
                         m.SetFloat("_disolvePerso", Mathf.Lerp(disolve, 0, 2f * Time.deltaTime));
                     }
