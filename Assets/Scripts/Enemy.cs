@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            enemyHP= Math.Max(enemyHP-1 , 0);
+            enemyHP--;
             body.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Damage", 1);
         }
     }
