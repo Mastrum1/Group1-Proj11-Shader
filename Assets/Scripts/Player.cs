@@ -10,19 +10,25 @@ public class Player : MonoBehaviour
     private int _currentHP;
     public GameObject bulletPrefab;
     private GameObject Heal;
+    private GameObject Spawn;
+    private bool _isSpawn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Heal = GameObject.Find("Soldier_body");
+        Spawn = GameObject.Find("Soldier_body");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_currentHP > _HP)
+        _isSpawn = true;
+        if (_isSpawn == true)
         {
-
+            Spawn.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Spawn", 1);
+            Spawn.GetComponent<SkinnedMeshRenderer>().material.SetColor("_DefaultColor", Color.white * 120);
+            _isSpawn = false;
         }
         if (_HP <= 0)
         {
