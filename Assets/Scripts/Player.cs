@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_currentHP > _HP)
+        if (_currentHP > _HP)
         {
             Debug.Log("test");
         }

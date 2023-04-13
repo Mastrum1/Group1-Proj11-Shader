@@ -5,6 +5,7 @@ using UnityEngine;
 public class RangeDetection : MonoBehaviour
 {
     public GameObject enemyDetected;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,6 @@ public class RangeDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void OnTriggerStay(Collider other)
