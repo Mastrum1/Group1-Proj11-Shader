@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Damage: 0
-    - _Fill: 0.1
+    - _Fill: 0.28
     - _Healing: 0
     - _Height: 1.9
     - _Offset: -2
