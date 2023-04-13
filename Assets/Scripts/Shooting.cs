@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject flarePrefab;
     bool flareFired = false;
 
