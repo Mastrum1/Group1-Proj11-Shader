@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
+    public GameObject enemy;
     public float bulletForce = 2f;
     public int shooted = 0;
 
@@ -28,7 +28,16 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(firePoint.position.x, 1, firePoint.position.z), firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+        if (enemy.GetComponent<RangeDetection>().enemyDetected != null)
+        {
+            Vector3 vector3 = enemy.GetComponent<RangeDetection>().enemyDetected.transform.position;
+            Vector3 test = vector3 - transform.position;
+            rb.AddForce(test * bulletForce, ForceMode.Impulse);
+        }
+        else
+        {
+            rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+        }
         shooted++;
     }
 }
