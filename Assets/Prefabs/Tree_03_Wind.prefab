@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e494371cccf50e40b65ddbb0b0b9b26, type: 2}
+  - {fileID: 2100000, guid: 61a5618237d602f449782409594e74c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,9 +141,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Size: {x: 4, y: 3, z: 4}
-  m_Center: {x: 0, y: 1, z: 0}
-  m_Area: 1
-  m_AffectedAgents: ffffffff
+  m_Name:
+  m_EditorClassIdentifier:
+  enemyHP: 3
+  shaders:
+  - {fileID: -6465566751694194690, guid: edb07edfd1f8d3540b8b18bfeffb6fdf, type: 3}

@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * 3);
     }*/
+    [SerializeField] private bool dead = false;
 
     public Transform _Player;
 
@@ -43,7 +44,15 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        _agent.SetDestination(_Player.position);
-        transform.position = new Vector3(transform.position.x, 0 , transform.position.z);
+        if(dead ==false)
+        {
+            _agent.SetDestination(_Player.position);
+            transform.position = new Vector3(transform.position.x, 0 , transform.position.z);
+        }
+    }
+
+    public void setDeath()
+    {
+        dead = true;
     }
 }
