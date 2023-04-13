@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealEffect : MonoBehaviour
 {
     private SkinnedMeshRenderer mesh;
-    private float force = 8f;
+    private float force = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class HealEffect : MonoBehaviour
             else
             {
                 mesh.material.SetFloat("_Healing", 0);
-                mesh.material.SetFloat("_Fill", 0.03f   );
+                mesh.material.SetFloat("_Fill", 0.10f   );
             }
         }
     }
