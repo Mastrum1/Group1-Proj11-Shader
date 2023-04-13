@@ -13,7 +13,7 @@ public class Flare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= 0) 
+        if (transform.position.y <= -0.2) 
         {
             Destroy(gameObject);
         }
