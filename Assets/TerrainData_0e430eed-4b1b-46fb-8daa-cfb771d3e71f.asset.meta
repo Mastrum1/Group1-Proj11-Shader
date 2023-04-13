@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< HEAD:Assets/TerrainData_0e430eed-4b1b-46fb-8daa-cfb771d3e71f.asset.meta
+=======
+>>>>>>> Stashed changes
+guid: 3d3d2c53bc5d19243afbf050a2445dbc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+<<<<<<< Updated upstream
+========
+guid: 2ef6df9336ae49f42938b42108a2411a
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>>> parent of f5430ff (Night + Flare go in sky):Assets/Sprites.meta
+=======
+>>>>>>> Stashed changes
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

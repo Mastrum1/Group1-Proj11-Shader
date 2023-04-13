@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465207541995380}
-  m_LocalRotation: {x: -0.007283776, y: 0.12166237, z: 0.09982238, w: 0.9875124}
-  m_LocalPosition: {x: 0.15999995, y: -0.49, z: 0.37999988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -2.216, y: 13.828001, z: 11.275001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33729083707108728
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c2ab8410951b5042955598cca68a2a0, type: 2}
+  - {fileID: 2100000, guid: 9545c9805c6d9b74d98cd72075ef623e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   collectSound: {fileID: 0}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f,
     type: 3}
+  Heal: {fileID: 0}
 --- !u!82 &82516303070720438
 AudioSource:
   m_ObjectHideFlags: 0

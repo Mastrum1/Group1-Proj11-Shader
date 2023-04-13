@@ -54,15 +54,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fill: 0.5
-    - _Healing: 1
+    - _Damage: 0
+    - _Fill: 0.1
+    - _Healing: 0
     - _Height: 1.9
     - _Offset: -2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _UpScrolling: 0
     m_Colors:
-    - _DefaultColor: {r: 0, g: 57.962265, b: 0.12890625, a: 0}
+    - _DefaultColor: {r: 0, g: 61.011467, b: 0.13568757, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7481665772999187751
 MonoBehaviour:

@@ -16,10 +16,11 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	public AudioClip collectSound;
 
 	public GameObject collectEffect;
+	public GameObject Heal;
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+		Heal = GameObject.Find("Soldier_body");
 	}
 	
 	// Update is called once per frame
@@ -57,10 +58,11 @@ public class SimpleCollectibleScript : MonoBehaviour {
 			if (GameObject.Find("Player").GetComponent<Player>()._HP < 10)
 			{
 				GameObject.Find("Player").GetComponent<Player>()._HP++;
-            }
+				Heal.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Healing", 1);
+                Heal.GetComponent<SkinnedMeshRenderer>().material.SetColor("_DefaultColor", Color.green * 120);
 
-			Debug.Log ("Do NoType Command");
-		}
+            }
+        }
 		if (CollectibleType == CollectibleTypes.Type2) {
 
 			//Add in code here;

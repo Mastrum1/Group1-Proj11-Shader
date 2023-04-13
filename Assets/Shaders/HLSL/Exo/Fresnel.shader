@@ -1,40 +1,36 @@
 Shader "Learning/Unlit/Fresnel"
 {
     Properties
-    {
-        // Fresnel Exponent : float entre 0.1 & 20
-        _Exp("Exponent", Range(0.1,20)) = 5
-        _ColorA("ColorA", Color) = (1,0,0,1)
-        _ColorB("ColorB", Color) = (0,1,0,1)
-        // 2 couleurs : une BaseColor (celle du mesh) et une pour l'effet outline du fresnel       
+    {   
+		// Fresnel Exponent : float entre 0.1 & 20
+        // 2 couleurs : une BaseColor (celle du mesh) et une pour l'effet outline du fresnel
+        _Exp("Exponent", Range(0.1,20)) = 2
+        _Bands("Number of bands", Range(1,20)) = 2
     }
-        SubShader
+    SubShader
     {
-        Pass
+		Pass
         {
-            HLSLPROGRAM
+			HLSLPROGRAM
             #pragma vertex vert  
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            float4 _ColorA;
-            float4 _ColorB;
-            float _Exp;
 			
-            
-            // Variables du bloc Properties
+            float _Exp, _Bands;
             
             struct vertexInput
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+                float3 normal : NORMAL;
             };
 			
             struct v2f
             {
                 float4 vertex : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float3 worldSpacePos : TEXCOORD1;
+                float3 worldSpacePos : TEXCOORD0;
+                float3 worldSpaceNormal : TEXCOORD1;
+                
                 // + 
                 // Transférer la position & la normale en WORLD SPACE
             };
@@ -47,14 +43,13 @@ Shader "Learning/Unlit/Fresnel"
                
                 // TO DO 
                 // position en float4 => w = 1
-                
                 // direction en float4 => w = 0
-                o.vertex = float4(o.uv.xy, 0, 1);
                 // matrice: unity_ObjectToWorld
+                o.worldSpacePos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 
                 // la normale en worldspace de la struct v2f doit être normalisée
-                o.worldSpacePos = mul(unity_ObjectToWorld, v.vertex);
-                
+                o.worldSpaceNormal = mul(unity_ObjectToWorld,float4(v.normal,0)).xyz;
+                o.worldSpaceNormal = normalize(o.worldSpaceNormal);
                 return o;
             }
 
@@ -62,17 +57,18 @@ Shader "Learning/Unlit/Fresnel"
             {
                 // TO DO: Une ligne à coder après chaque commentaire
                 // Calculer le vecteur FragmentToCamera puis le normaliser
+                float3 FragmentToCamera = normalize(_WorldSpaceCameraPos - i.worldSpacePos);
 	            
                 // Normaliser de nouveau la normale de la struct v2f
-                
+                i.worldSpaceNormal = normalize(i.worldSpaceNormal);
                 // Calcul du produit scalaire entre le vecteur PixelToCamera (View vector) & la normale
-	            
+	            float NdotV = dot(FragmentToCamera, i.worldSpaceNormal);
                 // Visualiser le résultat de NdotV  => ligne temporaire, juste pour comprendre l'effet à cette étape
-                
+                //return NdotV
                 // "Ajuster" le résultat obtenu
-                
+                NdotV = 1- NdotV;
                 // Utiliser la fonction pow(valueToRaise, FresnelExponent)
-	            
+	            float rim = pow(NdotV, _Exp);
                 // lerp entre BaseColor, FresnelColor et le rim calculé ci-dessus.
 	            return float4(0.9, 0.3, 0.2, 1.0);
             }
