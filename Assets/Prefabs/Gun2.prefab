@@ -104,6 +104,7 @@ MonoBehaviour:
   collectSound: {fileID: 0}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f,
     type: 3}
+  Heal: {fileID: 0}
 --- !u!82 &8225671773367748435
 AudioSource:
   m_ObjectHideFlags: 0

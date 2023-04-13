@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public class Player : MonoBehaviour
     {
         if (_currentHP > _HP)
         {
-            Debug.Log("test");
+
+        }
+        if (_HP <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

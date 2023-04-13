@@ -56,10 +56,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.14142135
     - _GlossyReflections: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
     - _Smoothness: 0.14142135
     - _disolvePerso: 0
     m_Colors: []
