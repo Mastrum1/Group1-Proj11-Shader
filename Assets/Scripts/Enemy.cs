@@ -6,10 +6,11 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int enemyHP = 3;
     public GameObject healthPack;
+    public GameObject body;
     // Start is called before the first frame update
     void Start()
     {
-        
+        body = GameObject.Find("Soldier_body");
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Bullet") 
         {
             enemyHP--;
+            body.GetComponent<SkinnedMeshRenderer>().material.SetFloat("_Damage", 1);
         }
     }
 }

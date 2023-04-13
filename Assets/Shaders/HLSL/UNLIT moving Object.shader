@@ -2,11 +2,8 @@ Shader "Learning/Unlit/FirstShader"
 {
     Properties
     {
-        // NOM_VARIABLE("NOM_AFFICHE_DANS_L'INSPECTOR", Shaderlab type) = defaultValue
-        _ColorA("_ColorA", Color) = (1,1,1,1)
-        _ColorB("_ColorB", Color) = (0,0,0,0)
         _Albedo("Albedo",  2D) = "white"{}
-        _Amplitude("Amplitude", Float) = 1
+        _Amplitude("Amplitude", Float) = 0.1
     }
 
         SubShader
@@ -19,8 +16,6 @@ Shader "Learning/Unlit/FirstShader"
 
             #include "UnityCG.cginc"
 
-            float4 _ColorA;
-            float4 _ColorB;
             sampler2D _Albedo;
             float _Amplitude;
 			

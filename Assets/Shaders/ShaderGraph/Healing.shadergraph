@@ -20,6 +20,9 @@
         },
         {
             "m_Id": "f7ffb657be8f4e82962afe7bc101c47a"
+        },
+        {
+            "m_Id": "389b7ceaa5e04ba5b679f1b73f40769c"
         }
     ],
     "m_Keywords": [],
@@ -798,6 +801,9 @@
         },
         {
             "m_Id": "f7ffb657be8f4e82962afe7bc101c47a"
+        },
+        {
+            "m_Id": "389b7ceaa5e04ba5b679f1b73f40769c"
         }
     ]
 }
@@ -888,6 +894,29 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Normal"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
+    "m_ObjectId": "389b7ceaa5e04ba5b679f1b73f40769c",
+    "m_Guid": {
+        "m_GuidSerialized": "8a7baebe-8a9d-4958-a356-b9cc0ef0ad2a"
+    },
+    "m_Name": "Damage",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Damage",
+    "m_DefaultReferenceName": "_Damage",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": false
 }
 
 {
