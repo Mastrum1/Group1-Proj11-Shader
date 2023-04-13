@@ -15,13 +15,19 @@ public class GunPosition : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Cooling()
     {
-        if (player.GetComponent<Shooting>().shooted > shoot)
+        mesh.material.SetFloat("_Fill", mesh.material.GetFloat("_Fill") - 0.1f);
+    }
+
+    // Update is called once per frame
+    async void Update()
+    {
+        if (player.GetComponent<Shooting>().shooted > shoot && mesh.material.GetFloat("_Fill") != 1f)
         {
-            mesh.material.SetFloat("_FresnelPower", mesh.material.GetFloat("_FresnelPower") - 0.1f);
+            mesh.material.SetFloat("_Fill", mesh.material.GetFloat("_Fill") + 0.1f);
             shoot = player.GetComponent<Shooting>().shooted;
+            Invoke("Cooling", 5);
         }
     }
 }
