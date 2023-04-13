@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2611739a590d734f937b9f94be23d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   _Player: {fileID: 0}
 --- !u!195 &1905997623243315447
 NavMeshAgent:
@@ -85,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 3
   healthPack: {fileID: 1465207541995380, guid: a5ad3b53c234b9040b754b2c2c9d8fc6, type: 3}
+  body: {fileID: 0}
   shaders:
   - {fileID: 2106365758929858586}
   - {fileID: 5777598744564729256}
@@ -180,12 +182,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c2b7ce38be491441b2514758529cac3, type: 2}
+      objectReference: {fileID: 2100000, guid: 39ddcc8179982f2438d8f157de62068a, type: 2}
     - target: {fileID: -1359310224657188892, guid: ae9decf35cf54c443bc3763ba576efe7,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c2b7ce38be491441b2514758529cac3, type: 2}
+      objectReference: {fileID: 2100000, guid: 39ddcc8179982f2438d8f157de62068a, type: 2}
     - target: {fileID: 919132149155446097, guid: ae9decf35cf54c443bc3763ba576efe7,
         type: 3}
       propertyPath: m_Name
@@ -193,7 +195,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321523695958950486, guid: ae9decf35cf54c443bc3763ba576efe7,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321523695958950486, guid: ae9decf35cf54c443bc3763ba576efe7,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39ddcc8179982f2438d8f157de62068a, type: 2}
+    - target: {fileID: 2321523695958950486, guid: ae9decf35cf54c443bc3763ba576efe7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4c2b7ce38be491441b2514758529cac3, type: 2}
     m_RemovedComponents: []
