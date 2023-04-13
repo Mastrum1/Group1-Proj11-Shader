@@ -54,7 +54,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fill: 0.03
+    - _Damage: 0
+    - _Fill: 0.1
     - _Healing: 0
     - _Height: 1.9
     - _Offset: -2
